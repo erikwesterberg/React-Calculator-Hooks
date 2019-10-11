@@ -56,7 +56,7 @@ const App = () => {
     }
   };
   // clear all items
-  const clearItem = () => {
+  const clearItems = () => {
     console.log("clear")
   }
 
@@ -82,7 +82,7 @@ const App = () => {
           handleCharge={handleCharge}
           handleSubmit={handleSubmit}
         />
-        <ExpenseList expenses={expenses} />
+        <ExpenseList expenses={expenses} handleDelete={handleDelete} handleEdit={handleEdit} clearItems={clearItems}/>
       </main>
       <h1>
         total spending :{" "}
