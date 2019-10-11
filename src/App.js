@@ -26,9 +26,18 @@ const App = () => {
   const handleCharge = e => {
     setCharge(e.target.value);
   };
+  // handle amount 
   const handleAmount = e => {
     setAmount(e.target.value);
   };
+ // handle alert
+  const handleAlert = ({type, text}) => {
+    setAlert({show:true, type, text})
+    setTimeout(() =>{
+      setAlert({show:false})
+    },3000)
+  }
+  // handle submit
   const handleSubmit = e => {
     e.preventDefault();
     if (charge != "" && amount > 0) {
