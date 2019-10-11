@@ -57,7 +57,7 @@ const App = () => {
   };
   // clear all items
   const clearItems = () => {
-    console.log("clear")
+   setExpenses([]);
   }
 
   //handel delete by id value
