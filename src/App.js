@@ -22,7 +22,13 @@ const App = () => {
     <ExpenseForm />
     <ExpenseList expenses={expenses}/>
     </main>
-    <ExpenseItem />
+    <h1>
+      total spending : <span className="total">
+        ${expenses.reduce((acc, curr) => {
+          return (acc += curr.amount);
+        }, 0)}
+      </span>
+    </h1>
     </>
   );
 };
