@@ -55,6 +55,20 @@ const App = () => {
       handleAlert({type:"danger", text: `Charge and amount cant be empty values`})
     }
   };
+  // clear all items
+  const clearItem = () => {
+    console.log("clear")
+  }
+
+  //handel delete by id value
+  const handleDelete = (id) => {
+    console.log(`item deleted: ${id}`)
+  }
+
+   //handel edit by id value
+   const handleEdit = (id) => {
+    console.log(`item edited: ${id}`)
+  }
   return (
     <>
       {alert.show && <Alert type={alert.type} text={alert.text} />}
