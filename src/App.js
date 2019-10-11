@@ -26,7 +26,7 @@ const App = () => {
     console.log(`charge: ${e.target.value}`)
   };
   const handleAmount = e => {
-    setCharge(e.target.value);
+    setAmount(e.target.value);
     console.log(`amount: ${e.target.value}`)
   };
   const handleSubmit = e => {
