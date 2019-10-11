@@ -39,6 +39,8 @@ const App = () => {
         ...expenses,
         singleExpense
       ])
+      setCharge("");
+      setAmount("");
     } else {
       //handle alert called
     }
@@ -62,7 +64,7 @@ const App = () => {
         <span className="total">
           $
           {expenses.reduce((acc, curr) => {
-            return (acc += curr.amount);
+            return (acc += parseInt(curr.amount));
           }, 0)}
         </span>
       </h1>
