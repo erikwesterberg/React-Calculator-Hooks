@@ -7,7 +7,7 @@ const ExpenseList = ({expenses, handleEdit, handleDelete, clearItems}) => {
     <>
     <ul className="list">
       {expenses.map((expense) => {
-        return <Item key={expense.id} expense={expense} />
+        return <Item key={expense.id} expense={expense} handleDelete={handleDelete} handleEdit={handleEdit} />
       })}
     </ul>
     {expenses.length > 0 && (
