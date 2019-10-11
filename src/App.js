@@ -58,11 +58,14 @@ const App = () => {
   // clear all items
   const clearItems = () => {
    setExpenses([]);
+   handleAlert({type: "danger", text: "All items deleted"})
   }
 
   //handel delete by id value
   const handleDelete = (id) => {
-    console.log(`item deleted: ${id}`)
+    let tempExpenes = expenses.filter(item => item.id !== id); 
+    setExpenses(tempExpenes);
+    handleAlert({type: "danger", text: "Item deleted"})
   }
 
    //handel edit by id value
