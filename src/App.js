@@ -76,7 +76,13 @@ const App = () => {
 
    //handel edit by id value
    const handleEdit = (id) => {
-    console.log(`item edited: ${id}`)
+    let expense = expenses.find(item => item.id === id);
+    let {charge, amount} = expense;
+    setCharge(charge);
+    setAmount(amount);
+    setEdit(true);
+    setId(id)
+
   }
   return (
     <>
