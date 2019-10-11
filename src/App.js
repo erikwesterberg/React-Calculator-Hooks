@@ -55,6 +55,9 @@ const App = () => {
       handleAlert({type:"danger", text: `Charge and amount cant be empty values`})
     }
   };
+
+  // edit items
+  const [edit, setEdit] = useState(false)
   // clear all items
   const clearItems = () => {
    setExpenses([]);
