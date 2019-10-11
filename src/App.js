@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Alert from "./components/Alert";
 import ExpenseList from "./components/ExpenseList";
@@ -11,13 +11,17 @@ const initialExpenses = [
   {id: uuid(), charge: "Car payment", amount: 600},
   {id: uuid(), charge: "Forest taxes", amount: 800}
 ]
-console.log(initialExpenses)
+
 const App = () => {
+  const [ expenses, setExpenses ] = useState(initialExpenses)
   return (
     <>
     <Alert />
+    <h1>Budget Calculator</h1>
+    <main className="App">
     <ExpenseForm />
-    <ExpenseList />
+    <ExpenseList expenses={expenses}/>
+    </main>
     <ExpenseItem />
     </>
   );
