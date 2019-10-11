@@ -20,6 +20,8 @@ const App = () => {
   const [charge, setCharge] = useState("");
   //Singe amount
   const [amount, setAmount] = useState("");
+  // alert
+  const [alert, setAlert] = useState({ show: false });
   //functionality
   const handleCharge = e => {
     setCharge(e.target.value);
@@ -31,14 +33,11 @@ const App = () => {
     e.preventDefault();
     if (charge != "" && amount > 0) {
       const singleExpense = {
-        id:uuid(),
+        id: uuid(),
         charge,
         amount
-      }
-      setExpenses([
-        ...expenses,
-        singleExpense
-      ])
+      };
+      setExpenses([...expenses, singleExpense]);
       setCharge("");
       setAmount("");
     } else {
@@ -47,6 +46,7 @@ const App = () => {
   };
   return (
     <>
+      {alert.show && <Alert type={alert.type} text={alert.text} />}
       <Alert />
       <h1>Budget Calculator</h1>
       <main className="App">
