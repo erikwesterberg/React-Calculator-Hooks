@@ -47,10 +47,12 @@ const App = () => {
         amount
       };
       setExpenses([...expenses, singleExpense]);
+      handleAlert({type:"success", text: "item added"})
       setCharge("");
       setAmount("");
     } else {
       //handle alert called
+      handleAlert({type:"danger", text: `Charge and amount cant be empty values`})
     }
   };
   return (
