@@ -41,13 +41,25 @@ const App = () => {
   const handleSubmit = e => {
     e.preventDefault();
     if (charge != "" && amount > 0) {
-      const singleExpense = {
+      if(edit) {
+        let tempExpenses = expenses.map((item) => {
+          return item.id = id ? {...item, charge, amount}: item
+        })
+        setExpenses(tempExpenses);
+        setEdit(false)
+        handleAlert({type:"success", text: "item edided"})
+
+      } else {
+        const singleExpense = {
         id: uuid(),
         charge,
         amount
       };
       setExpenses([...expenses, singleExpense]);
       handleAlert({type:"success", text: "item added"})
+      }
+  
+    
       setCharge("");
       setAmount("");
     } else {
