@@ -23,9 +23,11 @@ const App = () => {
   //functionality
   const handleCharge = e => {
     setCharge(e.target.value);
+    console.log(`charge: ${e.target.value}`)
   };
   const handleAmount = e => {
     setCharge(e.target.value);
+    console.log(`amount: ${e.target.value}`)
   };
   const handleSubmit = e => {
     e.preventDefault();
@@ -35,7 +37,7 @@ const App = () => {
       <Alert />
       <h1>Budget Calculator</h1>
       <main className="App">
-        <ExpenseForm charge={charge} amount={amount} handleAmount={handleAmount} handleCharge={handleCharge}  handleSubmit={handleSubmit}
+        <ExpenseForm charge={charge} amount={amount} handleAmount={handleAmount} handleCharge={handleCharge}  handleSubmit={handleSubmit} />
         <ExpenseList expenses={expenses} />
       </main>
       <h1>
