@@ -56,8 +56,11 @@ const App = () => {
     }
   };
 
-  // edit items
+  // edit 
   const [edit, setEdit] = useState(false)
+
+  // edit item
+  const [id, setId] = useState(0)
   // clear all items
   const clearItems = () => {
    setExpenses([]);
@@ -87,6 +90,7 @@ const App = () => {
           handleAmount={handleAmount}
           handleCharge={handleCharge}
           handleSubmit={handleSubmit}
+          edit={edit}
         />
         <ExpenseList expenses={expenses} handleDelete={handleDelete} handleEdit={handleEdit} clearItems={clearItems}/>
       </main>
